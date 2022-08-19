@@ -1,5 +1,6 @@
 import secrets
 import string
+import pyperclip
 
 def makePassword(length, isSymbol):
     # 英数字のみ
@@ -14,6 +15,13 @@ def makePassword(length, isSymbol):
 
     return password
 
+def copyPassword(password):
+    isCopy = input('パスワードをクリップボードにコピーしますか? (y/n)>>>')
+
+    if isCopy == True:
+        pyperclip.copy(password)
+
+
 length = input('パスワードの桁数を入力してください>>> ')
 isSymbol = input('記号を含めますか? (y/n)>>> ')
 
@@ -23,10 +31,14 @@ if length.isdecimal():
     # 記号を含むか y/nで分岐
     if 'y' in isSymbol:
         print("記号を含む" + length + "桁のパスワードを生成します")
-        print(makePassword(int(length), True))
+        password = makePassword(int(length), True)
+        print(password)
     else:
         print("記号を含まない" + length + "桁のパスワードを生成します")
-        print(makePassword(int(length), False))
+        password = makePassword(int(length), False)
+        print(password)
+        copyPassword(password)
+
 
 else:
     print("1以上の整数を入力してください")
