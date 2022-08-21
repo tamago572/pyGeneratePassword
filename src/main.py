@@ -16,16 +16,16 @@ def makePassword(length, isSymbol):
     return password
 
 def copyPassword(password):
-    isCopy = input('パスワードをクリップボードにコピーしますか? (y/n)>>>')
+    isCopy = input('パスワードをクリップボードにコピーしますか? (y/N)>>>')
 
     if 'y' in isCopy:
         pyperclip.copy(password)
         print('クリップボードにコピーしました')
-    
+
 
 
 length = input('パスワードの桁数を入力してください>>> ')
-isSymbol = input('記号を含めますか? (y/n)>>> ')
+isSymbol = input('記号を含めますか? (y/N)>>> ')
 
 # inputしたlengthがInt型か判定
 if length.isdecimal():
