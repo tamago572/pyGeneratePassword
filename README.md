@@ -14,3 +14,5 @@ Python3系を入れた状態で以下のコマンドを実行してください�
 ```Shell
 pip install pyperclip
 ```
+
+Pythonファイルは`src/main.py`です。
